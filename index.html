@@ -82,13 +82,21 @@
       }
     }
 
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .cursor::after {
+      content: "_";
+      animation: blink 1s steps(1) infinite;
+    }
   </style>
 </head>
 
 <body>
 
 R.H. Wesley Terminal [Version 1.3.7]<br>
-© 2025 Wesley Industries. All rights reserved.
+© 2025 Wesley Industries. All rights reserved.<br>
 
 <br>
   
@@ -204,18 +212,9 @@ May 3 2025 - <a href="https://www.meetup.com/toronto-science-fiction-and-fantasy
 </div>
 </div>
 
+<br>
+  
+@admin > <span class="cursor"></span>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
