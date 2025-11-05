@@ -1,79 +1,104 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
   <title>R H Wesley</title>
   <link rel="icon" type="image/x-icon" href="/icon.png?v=1">
+
+  <style>
+    @font-face {
+      font-family: pixel-operator-mono;
+      src: url(PixelOperatorMono.ttf);
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: mononoki;
+      src: url(mononoki-Regular.ttf);
+      font-display: swap;
+    }
+
+    body {
+      background-color: #4C505B;
+      color: #E1D2B5;
+      font-family: pixel-operator-mono, monospace;
+      font-size: 1rem;
+      padding: 10px 15px;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    .title {
+      color: #F0C674;
+      font-family: mononoki, monospace;
+      font-size: clamp(8px, 2.5vw, 12pt);
+      white-space: pre;
+      display: block;
+      overflow-x: auto;
+      margin-bottom: 10px;
+    }
+
+    .console-prompt, .console-indent {
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    .console-indent {
+      padding-left: 10px;
+      padding-bottom: 15px;
+    }
+
+    .double-indent {
+      padding-left: 10px;
+    }
+
+    .red { color: #CD6566; }
+    .yellow { color: #F0C674; }
+    .teal { color: #8BBEB7; }
+    .green { color: #B7BD67; }
+
+    a {
+      color: #80A2BE;
+      text-decoration: none;
+      display: inline-block;
+      padding: 2px 0;
+    }
+
+    a:visited {
+      color: #80A2BE;
+    }
+
+    a:hover, a:focus {
+      text-decoration: underline;
+      color: #B7BD67;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.95rem;
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+
+      .console-indent {
+        padding-left: 5px;
+      }
+
+      .title {
+        font-size: clamp(7px, 3vw, 10pt);
+      }
+    }
+  </style>
 </head>
-<style>
-  @font-face {
-    font-family: pixel-operator-mono;
-    src: url(PixelOperatorMono.ttf);
-  }
 
-  @font-face {
-    font-family: mononoki;
-    src: url(mononoki-Regular.ttf)
-  }
-
-  body {
-    background-color: #4C505B;
-    color: #E1D2B5;
-    font-family: pixel-operator-mono, monospace;
-    font-size: 12pt;
-    padding-left: 10px;
-  }
-
-  .title {
-    color: #F0C674;
-    font-family: mononoki, monospace;
-    font-size:  min(1.5lvw, 10pt);
-    white-space: pre;
-  }
-
-  .console-prompt {
-    white-space: pre-wrap;
-  }
-
-  .console-indent {
-    white-space: pre-wrap;
-    padding-left: 10px;
-    padding-bottom: 15px;
-  }
-
-  .double-indent {
-    padding-left: 10px;
-  }
-
-  .red {
-    color: #CD6566;
-  }
-
-  .yellow {
-    color: #F0C674;
-  }
-
-  .teal {
-    color: #8BBEB7;
-  }
-
-  .green {
-    color: #B7BD67;
-  }
-
-  a:link {
-    color: #80A2BE;
-    text-decoration: none;
-  }
-
-  a:visited {
-    color: #80A2BE;
-    text-decoration: none;
-  }
-</style>
 <body>
+
 <div class="console-prompt">
 @admin > <span class="red">title</span>
 </div>
+
 <div class="title">
   ▄▄▄▄▄▄         ▄▄▄▄ ▄▄▄▄      ▄▄▄▄   ▄▄▄▄ ▄▄▄▄▄▄▄   ▄▄▄ ▄  ▄▄▄▄    ▄▄▄▄▄▄▄ ▄▄▄▄  ▄▄▄▄ <span class="teal">   ▄▄▄▄▄▄▄   </span>
    ██   █▄        ██   ██        ██     ██   ██   ▀ ▄█▀  ▀█   ██      ██   ▀  ▀█▄  ▄█▀  <span class="teal"> ▄█▀     ▀█▄ </span>
@@ -82,6 +107,7 @@
    ██  ▀█▄        ██   ██         █▄█▀█▄█    ██     ▄     ██  ██      ██         ██     <span class="teal"> █▄     ▄▄██ </span>
   ▄██▄ ▄██▄ ██   ▄██▄ ▄██▄ ██     ▀█▀ ▀█▀   ▄██▄▄▄█ █▀▄▄▄█▀  ▄██▄▄▄█ ▄██▄▄▄█    ▄██▄    <span class="teal">  █▄█▄█▄██▀  </span>
 </div>
+
 <div class="console-indent">
 ---SPECULATIVE FICTION AUTHOR---
 </div>
@@ -89,6 +115,7 @@
 <div class="console-prompt">
 @admin > <span class="red">bio</span>
 </div>
+
 <div class="console-indent">
 R.H. Wesley is a speculative fiction author with a background in philosophy.
 He works as a programmer and spends the rest of his time playing board games and camping.
@@ -98,30 +125,37 @@ He lives in Toronto with his wife, cat and dog.
 <div class="console-prompt">
 @admin > <span class="red">stories</span>
 </div>
+
 <div class="console-indent">
 <a href="https://clarkesworldmagazine.com/wesley_11_25" style="color: #B7BD67; font-weight: bold; text-decoration: underline;">The Stone Played at Tengen</a> - <span class="yellow">Clarkesworld Magazine 11/25</span>
 <div class="double-indent">[SF] In Meiji era Japan, a game of Go plays out in the stars.
 Podcast version <a href="https://spotify.link/fNe6Zv9cXXb">here</a>.
-</div></div>
+</div>
+</div>
+
 <div class="console-indent">
 <a href="https://polymorphicmagazine.com/product/polymorphic-2025-physical-copy/" style="color: #B7BD67; font-weight: bold; text-decoration: underline;">The Dam</a> - <span class="yellow">Polymorphic Magazine 08/25</span>
-<div class="double-indent">[H] A man and his puppy investigate some unsettling beaver activity.
-</div></div>
+<div class="double-indent">[H] A man and his puppy investigate some unsettling beaver activity.</div>
+</div>
+
 <div class="console-indent">
 <a href="https://www.incensepunk.com/p/more-things-in-heaven" style="color: #B7BD67; font-weight: bold; text-decoration: underline;">More Things in Heaven</a> - <span class="yellow">Incensepunk Magazine 06/25</span>
-<div class="double-indent">[SF] Mary must be changed if she is to ascend.
-</div></div>
+<div class="double-indent">[SF] Mary must be changed if she is to ascend.</div>
+</div>
+
 <div class="console-indent">
 <a href="https://clarkesworldmagazine.com/wesley_09_24/" style="color: #B7BD67; font-weight: bold; text-decoration: underline;">A World of Milk and Promises</a> - <span class="yellow">Clarkesworld Magazine 09/24</span>
 <div class="double-indent">[SF] A woman deals with the loss of her daughter on a strange alien planet.
 Finalist for the <a href="https://www.csffa.ca/awards-information/current-ballot/">Aurora Award for Best Short Story</a>.
 Featured in <a href="https://www.kickstarter.com/projects/kotowych/years-best-canadian-fantasy-and-science-fiction-volume-3">Years Best Canadian Fantasy and Science-Fiction: Vol 3</a>.
 Podcast version <a href="https://open.spotify.com/episode/2jCu0uCBQFtVJ6mRcFIV68">here</a>.
-</div></div>
+</div>
+</div>
 
 <div class="console-prompt">
 @admin > <span class="red">interviews</span>
 </div>
+
 <div class="console-indent">
 Discussing 'A World of Milk and Promises' <a href="https://dmiasek.com/2025/06/27/an-interview-with-a-world-of-milk-and-r-h-wesley/"> with author Don Miasek</a>.
 Author profile in <a href="https://www.canva.com/design/DAGOgTcdMYg/ntavNpyk5BhiiXIALxd3eA/view?utm_content=DAGOgTcdMYg&utm_campaign=designshare&utm_medium=link&utm_source=editor#10">TSFFW newsletter</a>.
@@ -130,23 +164,23 @@ Author profile in <a href="https://www.canva.com/design/DAGOgTcdMYg/ntavNpyk5Bhi
 <div class="console-prompt">
 @admin > <span class="red">contact</span>
 </div>
+
 <div class="console-indent">
-Reach out at <a href= "mailto:roberthaywesley@gmail.com">roberthaywesley@gmail.com</a>.
-Events coordinator and moderator at <a href= "https://www.torontosffwriters.com/">Toronto SFF Writers</a>.
+Reach out at <a href="mailto:roberthaywesley@gmail.com">roberthaywesley@gmail.com</a>.
+Events coordinator and moderator at <a href="https://www.torontosffwriters.com/">Toronto SFF Writers</a>.
 </div>
 
 <div class="console-prompt">
 @admin > <span class="red">events</span>
 </div>
+
 <div class="console-indent">
 Industry professional event series hosted for Toronto SFF Writers:
 <div class="console-indent">
-March 29 2025 - <a href= "https://www.meetup.com/toronto-science-fiction-and-fantasy-writers-meetup/events/306658485/?eventOrigin=group_upcoming_events">Q&A with editor Neil Clarke</a>.
-May 3 2025 - <a href= "https://www.meetup.com/toronto-science-fiction-and-fantasy-writers-meetup/events/307196414/?eventOrigin=group_events_list">Q&A with author Peter Watts</a>.
+March 29 2025 - <a href="https://www.meetup.com/toronto-science-fiction-and-fantasy-writers-meetup/events/306658485/?eventOrigin=group_upcoming_events">Q&A with editor Neil Clarke</a>.<br>
+May 3 2025 - <a href="https://www.meetup.com/toronto-science-fiction-and-fantasy-writers-meetup/events/307196414/?eventOrigin=group_events_list">Q&A with author Peter Watts</a>.
+</div>
 </div>
 
 </body>
 </html>
-
-
-
