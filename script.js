@@ -4,14 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const initialDelay = 1500; // ms delay before starting
   const typeDelay = 100;    // base ms per character (adjust for speed)
   const beforeDelay = 0;  // ms pause before typing
-  const jitter = 30; // max +/- ms random jitter per character
+  const afterDelay = 500;   // ms pause after typing
+  const jitter = 50; // max +/- ms random jitter per character
 
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-  function computeDelay() {
-    const delta = Math.floor((Math.random() * jitter * 2) - jitter);
-    let delay = Math.max(10, typeDelay + delta);
-    return delay;
+  function addJitterToDelay(delay) {
+    const delta = Math.floor((Math.random() * jitter * 2) - jitter); // random between -jitter and +jitter
+    return Math.max(10, delay + delta);
   }
 
   function showCursorAfter(cursor, element) {
@@ -26,10 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
   async function simulateTypedConsoleCommand(element, text, cursor) {
     if (cursor) showCursorAfter(cursor, element);
     element.textContent = '';
+    await wait(addJitterToDelay(beforeDelay));
     for (let i = 0; i < text.length; i++) {
-      await wait(computeDelay());
+      await wait(addJitterToDelay(typeDelay));
       element.textContent += text[i];
     }
+    await wait(addJitterToDelay(afterDelay));
   }
 
   async function simulateConsoleOutput(target) {
@@ -74,8 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const lastAdmin = document.querySelector('.last-admin');
 
     for (let i = 0; i < commands.length; i++) {
-      await wait(beforeDelay);
-
       const command = commands[i];
       const toType = command.getAttribute('data-original') || command.textContent.trim();
       command.classList.remove('hidden');
