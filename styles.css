@@ -17,17 +17,8 @@ body {
   font-size: 1rem;
   -webkit-font-smoothing: none;
   font-smooth: never;
-  padding: 10px;
   overflow-x: auto;
   text-shadow: 0 0 3px rgba(255, 255, 255, 0.1);
-  background-image: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.02) 0px,
-    rgba(255, 255, 255, 0.02) 1px,
-    transparent 1px,
-    transparent 2px
-  );
-  background-attachment: fixed;
 }
 
 .title-container {
@@ -79,6 +70,18 @@ a:hover, a:focus {
 @media (max-width: 600px) {
   .title {
     font-size: 5pt;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 4pt;
+  }
+}
+
+@media (max-width: 330px) {
+  .title {
+    font-size: 3pt;
   }
 }
 
