@@ -86,21 +86,12 @@ a:hover, a:focus {
   50% { opacity: 0; }
 }
 
-/* existing cursor style used for final static cursor */
-.cursor {
-  /* hide the final blinking cursor until the end of the sequence */
-  visibility: hidden;
-}
-
 .cursor::after {
   content: "_";
   animation: blink 1s steps(1) infinite;
   color: #CD6566;
 }
 
-/* no separate typing pseudo-cursor: the single .cursor element is moved next to commands */
-
-/* reveal/hide animation for output blocks */
 .hidden {
   opacity: 0;
   max-height: 0;
