@@ -1,0 +1,116 @@
+@font-face {
+  font-family: pixel-operator-mono;
+  src: url(PixelOperatorMono.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: mononoki;
+  src: url(mononoki-Regular.ttf);
+  font-display: swap;
+}
+
+body {
+  background-color: #2B2E36;
+  color: #E1D2B5;
+  font-family: pixel-operator-mono, monospace;
+  font-size: 1rem;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  padding: 10px;
+  overflow-x: auto;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.1);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.02) 0px,
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  background-attachment: fixed;
+}
+
+.title-container {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.title {
+  color: #F0C674;
+  font-family: mononoki, monospace;
+  white-space: pre;
+  display: inline-block;
+  transform-origin: top left;
+  font-size: 10pt;
+  line-height: 1.1;
+}
+
+.indent {
+  padding-left: 1ch;
+}
+
+.red { color: #CD6566; }
+.yellow { color: #F0C674; }
+.teal { color: #8BBEB7; }
+.green { color: #B7BD67; }
+
+a {
+  color: #80A2BE;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #80A2BE;
+}
+
+a:hover, a:focus {
+  text-decoration: underline;
+  color: #B7BD67;
+}
+
+@media (max-width: 800px) {
+  .title {
+    font-size: 7.5pt;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 5pt;
+  }
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* existing cursor style used for final static cursor */
+.cursor {
+  /* hide the final blinking cursor until the end of the sequence */
+  visibility: hidden;
+}
+
+.cursor::after {
+  content: "_";
+  animation: blink 1s steps(1) infinite;
+  color: #CD6566;
+}
+
+/* no separate typing pseudo-cursor: the single .cursor element is moved next to commands */
+
+/* reveal/hide animation for output blocks */
+.hidden {
+  opacity: 0;
+  max-height: 0;
+  transform: translateY(-6px);
+  overflow: hidden;
+  transition: opacity 360ms ease, max-height 420ms ease, transform 360ms ease;
+}
+
+.visible {
+  opacity: 1;
+  max-height: 2000px; /* large enough to expand */
+  transform: translateY(0);
+}
