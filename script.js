@@ -57,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   async function runSequence() {
-
     // store each command's original text and clear it so headings are hidden until typed
     commands.forEach(cmd => {
       if (!cmd.dataset.original) cmd.dataset.original = cmd.textContent.trim();
