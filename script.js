@@ -1,10 +1,10 @@
 // Simple sequential typer and reveal (refactored)
 document.addEventListener('DOMContentLoaded', () => {
   const commands = Array.from(document.querySelectorAll('.command'));
-  const initialDelay = 1500; // ms delay before starting
-  const typeDelay = 100;    // base ms per character (adjust for speed)
+  const initialDelay = 1200; // ms delay before starting
+  const typeDelay = 75;    // base ms per character (adjust for speed)
   const beforeDelay = 0;  // ms pause before typing
-  const afterDelay = 500;   // ms pause after typing
+  const afterDelay = 300;   // ms pause after typing
   const jitter = 50; // max +/- ms random jitter per character
 
   const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
